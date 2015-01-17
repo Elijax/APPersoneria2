@@ -1,0 +1,24 @@
+<ion-view>
+    <ion-content>
+        <div id="searchTextResults">
+        <h1 style="text-align: center;"><strong>Glosario:</strong></h1>
+            <div class="" ng-repeat="termino in terminos" href="#">
+                <div class="row">
+                    <div class="col-top">
+                        <h4 class="energized"><i class="icon ion-minus-round"></i><strong> {{ termino.term }}</strong></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-bottom">
+                        <p>{{ termino.description | limitTo:maxLength}}
+                            <span ng-show="termino.description.length > maxLength" ng-click="maxLength=termino.description.length" class="clickable">
+                                <strong class="dark">...Expandir texto</strong>
+                            </span>    
+                        </p>   
+                    </div>
+                </div>                                     
+            </div>
+        </div>
+        <img class="title-image" src="img/logo.png" alt="" style="padding:10%;width:100%;"/>
+    </ion-content>
+</ion-view>
